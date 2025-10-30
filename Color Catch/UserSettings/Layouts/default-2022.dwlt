@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 100
+  controlID: 116
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 347.19995
     height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -93,7 +93,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 214.4
-    height: 348.8
+    height: 472
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
@@ -117,9 +117,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 348.8
+    y: 472
     width: 1188.8
-    height: 382
+    height: 258.8
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 12}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 39
+  controlID: 50
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,11 +244,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1188.8
-    height: 348.8
+    height: 472
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 40
+  controlID: 51
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -267,7 +267,7 @@ MonoBehaviour:
     x: 214.4
     y: 0
     width: 974.4
-    height: 348.8
+    height: 472
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
@@ -297,9 +297,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 422.4
+    y: 545.60004
     width: 1187.8
-    height: 361
+    height: 237.79999
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SimplePoly City - Low Poly Assets/Prefab/Roads
+    - Assets/SimplePoly City - Low Poly Assets/Prefab/Buildings
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/SimplePoly City - Low Poly Assets/Prefab/Roads
+  - Assets/SimplePoly City - Low Poly Assets/Prefab/Buildings
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Year3S5\Gaming Development\Midterm_Project_Game_Design\Color
     Catch
@@ -337,9 +337,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: e04d0100
-    m_LastClickedID: 85472
-    m_ExpandedIDs: 00000000b45c0000e25c0000c44d0100c84d010000ca9a3bffffff7f
+    m_SelectedIDs: f65b0000
+    m_LastClickedID: 23542
+    m_ExpandedIDs: 00000000b45b0000ce5b0000ee5b0000f662000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b45c0000
+    m_ExpandedIDs: 00000000b45b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -419,7 +419,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 455.2}
     m_GridSize: 96
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -493,7 +493,7 @@ MonoBehaviour:
     x: 0
     y: 73.6
     width: 213.4
-    height: 327.8
+    height: 451
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -507,9 +507,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 509dfdff64cafdff7845feff06efffff
+      m_SelectedIDs: 245b0000
+      m_LastClickedID: 23332
+      m_ExpandedIDs: c6f6ffff2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -556,7 +556,7 @@ MonoBehaviour:
     x: 214.40001
     y: 73.6
     width: 972.4
-    height: 327.8
+    height: 451
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -883,11 +883,11 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 48, y: 10.400024}
+      snapOffset: {x: 48, y: 10.399963}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
-      index: 9
+      index: 8
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -902,9 +902,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -13.209629, y: -4.8431616, z: -7.7894754}
+    m_Target: {x: -14.747906, y: 42.57467, z: -54.435463}
     speed: 2
-    m_Value: {x: -13.209629, y: -4.8431616, z: -7.7894754}
+    m_Value: {x: -14.747906, y: 42.57467, z: -54.435463}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -929,7 +929,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
         m_Target: 1
@@ -945,22 +945,22 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: -0.7071067, y: 0.00000056230897, z: -0.000000131548, w: -0.7071069}
+    m_Value: {x: 0.00000028088027, y: 0, z: 0, w: 0.99999994}
   m_Size:
-    m_Target: 270.21664
+    m_Target: 112.97294
     speed: 2
-    m_Value: 270.01413
+    m_Value: 108.10808
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -1035,10 +1035,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 195.2
+    x: 214.40001
     y: 73.6
-    width: 889.2
-    height: 411
+    width: 972.4
+    height: 451
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_ShowGizmos: 1
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 889.2, y: 390}
+  m_TargetSize: {x: 972.4, y: 430}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1072,10 +1072,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -355.68002
-    m_HBaseRangeMax: 355.68002
-    m_VBaseRangeMin: -156
-    m_VBaseRangeMax: 156
+    m_HBaseRangeMin: -388.96002
+    m_HBaseRangeMax: 388.96002
+    m_VBaseRangeMin: -172
+    m_VBaseRangeMax: 172
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1093,23 +1093,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 889.2
-      height: 390
+      width: 972.4
+      height: 430
     m_Scale: {x: 1.25, y: 1.25}
-    m_Translation: {x: 444.59998, y: 195}
+    m_Translation: {x: 486.2, y: 215}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -355.68
-      y: -156
-      width: 711.36
-      height: 312
+      x: -388.96002
+      y: -172
+      width: 777.92004
+      height: 344
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1111.5, y: 513.75}
+  m_LastWindowPixelSize: {x: 1215.5, y: 563.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
