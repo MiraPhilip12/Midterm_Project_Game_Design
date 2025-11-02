@@ -1,29 +1,33 @@
 using UnityEngine;
 
+// Collectible.cs
+// Attach to the coin or bomb prefab (ensure the collider is IsTrigger = true and Rigidbody is kinematic)
 public class Collectible : MonoBehaviour
 {
-    public string colorName = "Gold"; // set per prefab or by SpawnManager
-    public int pointValue = 10;
+    public enum LocalItemType { Coin, Bomb }
+
+    [Tooltip("Set whether this prefab is a coin (good) or bomb (bad)")]
+    public LocalItemType itemType = LocalItemType.Coin;
+
+    [Tooltip("Points to add or subtract when picked")]
+    public int points = 10;
+
     public AudioClip pickupSFX;
     public ParticleSystem pickupVFX;
 
-    // Called by PlayerCarController OnTriggerEnter
-    public void OnPickedUp()
+    void OnTriggerEnter(Collider other)
     {
-        // Compare with GameManager target
-        if (GameManager.Instance == null) return;
+        if (!other.CompareTag("Player")) return;
 
-        bool correct = colorName == GameManager.Instance.targetColor;
-        if (correct)
+        if (GameManager.Instance == null)
         {
-            GameManager.Instance.AddScore(pointValue);
-            // play correct sound
+            Debug.LogWarning("[Collectible] GameManager.Instance is null. Make sure a GameManager exists in the scene.");
+            return;
         }
-        else
-        {
-            GameManager.Instance.AddScore(-pointValue);
-            GameManager.Instance.ShowFeedback($"-{pointValue} (Wrong color)");
-        }
+
+        // Map local enum to GameManager.ItemType and notify GameManager
+        GameManager.ItemType gmType = (itemType == LocalItemType.Coin) ? GameManager.ItemType.Coin : GameManager.ItemType.Bomb;
+        GameManager.Instance.HandleCollectiblePicked(gmType, points);
 
         if (pickupVFX) Instantiate(pickupVFX, transform.position, Quaternion.identity);
         if (pickupSFX) AudioSource.PlayClipAtPoint(pickupSFX, transform.position);
