@@ -1,24 +1,22 @@
-// CameraFollow.cs
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 offset = new Vector3(0f, 18f, -12f);
-    public float smooth = 8f;
-
+    // Reference to the player GameObject.
+    public GameObject Player;
+    // The distance between the camera and the player.
+private Vector3 offset;
+    // Start is called before the first frame update.
+    void Start()
+    {
+        // Calculate the initial offset between the camera's position and the player's position.
+        offset = transform.position - Player.transform.position;
+    }
+    // LateUpdate is called once per frame after all Update functions have been completed.
     void LateUpdate()
     {
-        if (target == null)
-        {
-            // try to auto-find the player by tag once
-            GameObject player = GameObject.FindWithTag("Player");
-            if (player != null) target = player.transform;
-            else return;
-        }
-
-        Vector3 desired = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, desired, Time.deltaTime * smooth);
-        transform.LookAt(target.position + Vector3.up * 0.6f);
+        // Maintain the same offset between the camera and player throughout the game.
+        transform.position = Player.transform.position + offset;
     }
 }
