@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game rules")]
     public int score = 0;
-    public float totalTime = 60f; // change as needed
+    public float totalTime = 60f; // seconds
     public bool gameOver = false;
 
     [Header("UI")]
@@ -17,10 +18,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI targetText;
     public GameObject gameOverPanel;
     public TextMeshProUGUI finalScoreText;
-    public TextMeshProUGUI feedbackText; // small message for wrong pick / hazard
+    public TextMeshProUGUI feedbackText; // message for wrong pick / hazard
 
     [Header("Collectible target")]
-    public string targetColor = "Gold"; // example: "Gold", "Silver", "Bronze"
+    public string targetColor = "Gold";
 
     float timer;
 
@@ -45,11 +46,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (gameOver) return;
+
+        // Count down using unscaled delta to avoid freezing issues if you use timescale
         timer -= Time.deltaTime;
         if (timer <= 0f)
         {
             timer = 0f;
-            EndGame(false); // player loses when time finishes
+            EndGame(false);
         }
         UpdateUI();
     }
@@ -74,12 +77,25 @@ public class GameManager : MonoBehaviour
         if (targetText) targetText.text = $"Target: {targetColor}";
     }
 
+    // displays and pauses play on game over
     public void EndGame(bool won)
     {
         gameOver = true;
-        Time.timeScale = 0f;
+        // show panel and freeze time for gameplay
         if (gameOverPanel) gameOverPanel.SetActive(true);
-        if (finalScoreText) finalScoreText.text = $"Final Score: {score}\nTime: {Mathf.CeilToInt(timer)}";
+
+        if (finalScoreText) finalScoreText.text = $"Final Score: {score}\nTime Left: {Mathf.CeilToInt(timer)}";
+
+        // Stop gameplay but keep UI coroutines working by using unscaled time for UI routines.
+        Time.timeScale = 0f;
+    }
+
+    // Hides game over and ensures timeScale back to 1
+    public void HideGameOver()
+    {
+        if (gameOverPanel) gameOverPanel.SetActive(false);
+        gameOver = false;
+        Time.timeScale = 1f;
     }
 
     public void Restart()
@@ -95,7 +111,7 @@ public class GameManager : MonoBehaviour
         ShowFeedback($"-{penalty} : {reason}");
     }
 
-    // Display short message on screen
+    // Display short message on screen (uses realtime so it still hides if timescale=0)
     public void ShowFeedback(string msg, float duration = 1.2f)
     {
         if (feedbackText == null) return;
@@ -103,11 +119,12 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShowFeedbackRoutine(msg, duration));
     }
 
-    System.Collections.IEnumerator ShowFeedbackRoutine(string msg, float dur)
+    IEnumerator ShowFeedbackRoutine(string msg, float dur)
     {
         feedbackText.text = msg;
         feedbackText.gameObject.SetActive(true);
-        yield return new WaitForSecondsRealtime(dur); // realtime so it's independent if you pause/timeScale=0
+        // use realtime so it still hides correctly even when Time.timeScale == 0
+        yield return new WaitForSecondsRealtime(dur);
         feedbackText.gameObject.SetActive(false);
     }
 }
