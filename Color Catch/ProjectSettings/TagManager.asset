@@ -7,6 +7,8 @@ TagManager:
   - Hazard
   - Collectible
   - Police
+  - Barrier
+  - Bush
   layers:
   - Default
   - TransparentFX

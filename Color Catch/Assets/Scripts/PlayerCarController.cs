@@ -3,30 +3,84 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerCarController : MonoBehaviour
 {
-    public float forwardSpeed = 14f;   // increased
-    public float reverseSpeed = 7f;
-    public float turnSpeed = 160f;
-    Rigidbody rb;
-    float moveInput;
-    float turnInput;
+    public float forwardSpeed = 20f;
+    public float reverseSpeed = 10f;
+    public float turnSpeed = 120f;
 
-    void Awake() { rb = GetComponent<Rigidbody>(); }
+    private Rigidbody rb;
+    private float moveInput;
+    private float turnInput;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        // Set up rigidbody for proper physics
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.mass = 1000f; // Realistic car mass
+    }
 
     void Update()
     {
-        moveInput = Input.GetAxis("Vertical");    // W/S or Up/Down
-        turnInput = Input.GetAxis("Horizontal");  // A/D or Left/Right
+        moveInput = Input.GetAxis("Vertical");
+        turnInput = Input.GetAxis("Horizontal");
     }
 
     void FixedUpdate()
     {
-        Vector3 forward = transform.forward;
-        float speed = (moveInput >= 0) ? forwardSpeed : reverseSpeed;
-        Vector3 vel = forward * moveInput * speed;
-        rb.MovePosition(rb.position + vel * Time.fixedDeltaTime);
+        if (GameManager.Instance != null && GameManager.Instance.gameOver) return;
 
-        float turn = turnInput * turnSpeed * Time.fixedDeltaTime;
-        Quaternion rot = rb.rotation * Quaternion.Euler(0f, turn, 0f);
-        rb.MoveRotation(rot);
+        // Only move if we have input
+        if (moveInput != 0)
+        {
+            Vector3 forward = transform.forward;
+            float speed = (moveInput >= 0) ? forwardSpeed : reverseSpeed;
+            Vector3 movement = forward * moveInput * speed * Time.fixedDeltaTime;
+            rb.MovePosition(rb.position + movement);
+        }
+
+        // Only turn if we have input
+        if (turnInput != 0)
+        {
+            float turn = turnInput * turnSpeed * Time.fixedDeltaTime;
+            Quaternion rotation = rb.rotation * Quaternion.Euler(0f, turn, 0f);
+            rb.MoveRotation(rotation);
+        }
+    }
+
+    // Strong collision detection with barriers and bushes
+    void OnCollisionEnter(Collision collision)
+    {
+        HandleCollision(collision.collider);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        HandleCollision(other);
+    }
+
+    void HandleCollision(Collider collider)
+    {
+        if (collider.CompareTag("Barrier") || collider.CompareTag("Bush"))
+        {
+            // Strong force to stop the car
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+
+            // Apply strong knockback
+            Vector3 awayDirection = (transform.position - collider.transform.position).normalized;
+            rb.AddForce(awayDirection * 15f, ForceMode.VelocityChange);
+
+            Debug.Log($"Collided with: {collider.gameObject.name}");
+        }
+
+        // Police collision - instant game over
+        if (collider.CompareTag("Police"))
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.EndGame(false); // Instant game over
+            }
+        }
     }
 }

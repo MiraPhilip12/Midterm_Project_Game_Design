@@ -1,7 +1,6 @@
 using UnityEngine;
 
 // HazardDamage.cs
-// Attach to static bushes/barriers. Use either a collider (non-trigger) or trigger collider.
 public class HazardDamage : MonoBehaviour
 {
     [Tooltip("Points to subtract when player collides")]

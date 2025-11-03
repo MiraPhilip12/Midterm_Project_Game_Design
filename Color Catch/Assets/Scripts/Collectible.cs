@@ -21,12 +21,15 @@ public class Collectible : MonoBehaviour
 
         if (GameManager.Instance == null)
         {
-            Debug.LogWarning("[Collectible] GameManager.Instance is null. Make sure a GameManager exists in the scene.");
+            Debug.LogWarning("[Collectible] GameManager.Instance is null.");
             return;
         }
 
-        // Map local enum to GameManager.ItemType and notify GameManager
-        GameManager.ItemType gmType = (itemType == LocalItemType.Coin) ? GameManager.ItemType.Coin : GameManager.ItemType.Bomb;
+        // Map local enum to GameManager.ItemType
+        GameManager.ItemType gmType = (itemType == LocalItemType.Coin) ?
+            GameManager.ItemType.Coin : GameManager.ItemType.Bomb;
+
+        // This will handle the scoring correctly based on targetItem
         GameManager.Instance.HandleCollectiblePicked(gmType, points);
 
         if (pickupVFX) Instantiate(pickupVFX, transform.position, Quaternion.identity);

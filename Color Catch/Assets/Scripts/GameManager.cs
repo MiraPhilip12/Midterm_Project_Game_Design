@@ -1,4 +1,3 @@
-// Assets/Scripts/GameManager.cs
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -15,11 +14,14 @@ public class GameManager : MonoBehaviour
     public float totalTime = 60f;
     public bool gameOver = false;
 
+    [Header("Win Condition")]
+    public int winScore = 100;
+
     [Header("Collectible target")]
-    public ItemType targetItem = ItemType.Coin;   // current required item type to earn points
+    public ItemType targetItem = ItemType.Coin;
     [Tooltip("If true the target will rotate randomly each interval")]
     public bool rotateTargetOverTime = false;
-    public float rotateInterval = 10f; // seconds
+    public float rotateInterval = 10f;
 
     [Header("UI (assign TextMeshProUGUI objects)")]
     public TextMeshProUGUI scoreText;
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI feedbackText;
     public GameObject gameOverPanel;
     public TextMeshProUGUI finalScoreText;
+    public UnityEngine.UI.Button replayButton;
 
     [Header("Game over settings")]
     public bool loseWhenTimerZero = true;
@@ -48,12 +51,15 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         Time.timeScale = 1f;
 
-        // Ensure UI panel visibility
         if (gameOverPanel) gameOverPanel.SetActive(false);
 
-        // Setup layout to minimize overlapping (best-effort)
-        TryArrangeUI();
+        // Setup replay button
+        if (replayButton != null)
+        {
+            replayButton.onClick.AddListener(Restart);
+        }
 
+        TryArrangeUI();
         UpdateUI();
 
         if (rotateTargetOverTime)
@@ -77,12 +83,8 @@ public class GameManager : MonoBehaviour
         UpdateUI();
     }
 
-    #region UI & layout helpers
-
     void TryArrangeUI()
     {
-        // This tries to place UI elements in sensible screen corners if they were mis-positioned.
-        // If you prefer editor control, you can disable this behavior.
         try
         {
             if (scoreText != null)
@@ -118,7 +120,7 @@ public class GameManager : MonoBehaviour
                 rt.anchorMin = new Vector2(0.5f, 1f);
                 rt.anchorMax = new Vector2(0.5f, 1f);
                 rt.pivot = new Vector2(0.5f, 1f);
-                rt.anchoredPosition = new Vector2(0f, -48f); // just below timer
+                rt.anchoredPosition = new Vector2(0f, -48f);
                 feedbackText.gameObject.SetActive(false);
             }
 
@@ -136,23 +138,17 @@ public class GameManager : MonoBehaviour
         }
         catch
         {
-            // ignore if any element is missing - this is a safe best-effort arrangement
+            // ignore errors
         }
     }
 
     void UpdateUI()
     {
         if (scoreText) scoreText.text = $"Score: {score}";
-        if (timerText) timerText.text = Mathf.CeilToInt(timer).ToString();
+        if (timerText) timerText.text = $"Time: {Mathf.CeilToInt(timer)}";
         if (targetText) targetText.text = $"Target: {targetItem}";
     }
 
-    #endregion
-
-    #region Score & game events
-
-    // Call this from your collectible script when player picks an item.
-    // Example: GameManager.Instance.HandleCollectiblePicked(GameManager.ItemType.Coin, 10);
     public void HandleCollectiblePicked(ItemType type, int points)
     {
         if (gameOver) return;
@@ -174,28 +170,27 @@ public class GameManager : MonoBehaviour
         score += amount;
         if (score < 0) score = 0;
         UpdateUI();
+
+        // Check win condition
+        if (score >= winScore && !gameOver)
+        {
+            EndGame(true);
+        }
     }
 
-    // Police calls this when player is caught
     public void OnPoliceCatch(int penaltyPoints = 15)
     {
         if (gameOver) return;
         AddScore(-penaltyPoints);
         ShowFeedback($"-{penaltyPoints} Caught by Police");
-        // optionally add stun or respawn logic here
     }
 
-    // Hazards (bushes/barriers) call this
     public void OnHazardHit(int penaltyPoints = 5, string hazardName = "Hazard")
     {
         if (gameOver) return;
         AddScore(-penaltyPoints);
         ShowFeedback($"-{penaltyPoints} ({hazardName})");
     }
-
-    #endregion
-
-    #region Feedback & target rotation
 
     public void ShowFeedback(string text, float duration = 1.2f)
     {
@@ -217,22 +212,21 @@ public class GameManager : MonoBehaviour
         while (!gameOver)
         {
             yield return new WaitForSeconds(rotateInterval);
-            // flip target
             targetItem = (targetItem == ItemType.Coin) ? ItemType.Bomb : ItemType.Coin;
             UpdateUI();
             ShowFeedback($"Target is now {targetItem}", 1.0f);
         }
     }
 
-    #endregion
-
-    #region Game flow
-
     public void EndGame(bool playerWon)
     {
         gameOver = true;
         if (gameOverPanel) gameOverPanel.SetActive(true);
-        if (finalScoreText) finalScoreText.text = $"Final Score: {score}\nTime left: {Mathf.CeilToInt(timer)}";
+
+        string resultText = playerWon ? "YOU WIN!" : "GAME OVER";
+        if (finalScoreText)
+            finalScoreText.text = $"{resultText}\nFinal Score: {score}";
+
         Time.timeScale = 0f;
     }
 
@@ -241,6 +235,4 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    #endregion
 }

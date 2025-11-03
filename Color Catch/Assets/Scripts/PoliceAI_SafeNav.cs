@@ -6,79 +6,97 @@ public class PoliceAI_SafeNav : MonoBehaviour
 {
     NavMeshAgent agent;
     public Transform player;
-    public float chaseRange = 30f;
-    public float catchRange = 1.2f;
-    public int catchPenalty = 15;
+    public float chaseSpeed = 15f;
+    public float minDistance = 5f; // Minimum distance to maintain
+    public float maxDistance = 20f; // Maximum distance before chasing
 
-    void Awake()
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
+    private Vector3 lastPlayerPosition;
+    private bool isChasing = false;
 
     void Start()
     {
-        // If agent isn't on a NavMesh (common if placed slightly off or NavMesh rebuilt),
-        // try to snap it to the nearest NavMesh position.
-        if (!agent.isOnNavMesh)
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = chaseSpeed;
+        agent.angularSpeed = 120f;
+        agent.acceleration = 12f;
+        agent.stoppingDistance = minDistance;
+
+        // Find player automatically
+        if (player == null)
         {
-            NavMeshHit hit;
-            // search radius 5 units - increase if your agent is far from the baked navmesh
-            if (NavMesh.SamplePosition(transform.position, out hit, 5.0f, NavMesh.AllAreas))
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
             {
-                transform.position = hit.position;
-                // it's OK if agent.enabled is already true; but ensure agent can work
-                agent.enabled = true;
+                player = playerObj.transform;
+                Debug.Log("Found player: " + player.name);
             }
             else
             {
-                Debug.LogWarning("[PoliceAI_SafeNav] No NavMesh near police; make sure NavMesh is baked and this object is near walkable geometry.");
+                Debug.LogError("Cannot find player with tag 'Player'");
             }
         }
+
+        // Ensure NavMesh setup
+        if (!agent.isOnNavMesh)
+        {
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(transform.position, out hit, 5.0f, NavMesh.AllAreas))
+            {
+                transform.position = hit.position;
+                agent.enabled = true;
+            }
+        }
+
+        lastPlayerPosition = player.position;
     }
 
     void Update()
     {
         if (player == null) return;
-
-        // don't call NavMeshAgent properties unless agent.isOnNavMesh is true
-        if (!agent.isOnNavMesh)
+        if (GameManager.Instance != null && GameManager.Instance.gameOver)
         {
-            // fallback: rotate towards player but don't call NavMesh properties
-            Vector3 toPlayer = player.position - transform.position;
-            toPlayer.y = 0f;
-            if (toPlayer.sqrMagnitude > 0.01f)
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(toPlayer), Time.deltaTime * 4f);
+            agent.isStopped = true;
             return;
         }
 
-        float d = Vector3.Distance(transform.position, player.position);
-        if (d <= chaseRange)
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // Always chase player but maintain distance
+        if (distanceToPlayer > minDistance && agent.isOnNavMesh)
         {
-            agent.SetDestination(player.position);
+            agent.isStopped = false;
+
+            // Predict player's position for better chasing
+            Vector3 playerDirection = (player.position - lastPlayerPosition).normalized;
+            Vector3 predictedPosition = player.position + playerDirection * 2f;
+
+            agent.SetDestination(predictedPosition);
+            isChasing = true;
         }
         else
         {
-            if (!agent.hasPath || agent.remainingDistance < 0.5f)
-                agent.ResetPath();
+            // Stop when close to player
+            agent.isStopped = true;
+            isChasing = false;
+
+            // Face the player
+            Vector3 directionToPlayer = (player.position - transform.position).normalized;
+            directionToPlayer.y = 0;
+            if (directionToPlayer != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+            }
         }
 
-        if (d <= catchRange)
+        lastPlayerPosition = player.position;
+
+        // Debug info
+        if (isChasing)
         {
-            OnCatchPlayer();
+            Debug.Log($"Police chasing player. Distance: {distanceToPlayer}");
         }
     }
 
-    void OnCatchPlayer()
-    {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.AddScore(-catchPenalty);
-            GameManager.Instance.ShowFeedback($"-{catchPenalty} Caught by Police");
-        }
-
-        // move police slightly away so it doesn't instantly recatch
-        Vector3 back = (transform.position - player.position).normalized * 3f;
-        transform.position = transform.position + back;
-        agent.ResetPath();
-    }
+    // Police collision handled in PlayerCarController for instant game over
 }
