@@ -362,7 +362,6 @@
 "Assets/BTM_Assets/BTM_Items_Gems/Scripts/SimpleGemsAnim.cs"
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/Collectible.cs"
-"Assets/Scripts/CollectiblePickup.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/HazardDamage.cs"
 "Assets/Scripts/PlayerCarController.cs"
