@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// HazardDamage.cs
 public class HazardDamage : MonoBehaviour
 {
     [Tooltip("Points to subtract when player collides")]

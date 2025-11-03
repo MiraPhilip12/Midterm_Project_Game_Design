@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     public Transform player;
-    public Vector3 offset = new Vector3(0, 8, -10);
+    public Vector3 offset = new Vector3(0, 3, -6);
     public float smoothSpeed = 5f;
-    public float rotationSpeed = 3f;
 
     void LateUpdate()
     {
@@ -16,12 +13,10 @@ public class CameraFollow : MonoBehaviour
         // Calculate desired position behind the player
         Vector3 desiredPosition = player.position + player.TransformDirection(offset);
 
-        // Smooth position
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
-        transform.position = smoothedPosition;
+        // Smoothly move camera to desired position
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
 
-        // Always look at player
-        Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        // Always look at the player
+        transform.LookAt(player.position);
     }
 }

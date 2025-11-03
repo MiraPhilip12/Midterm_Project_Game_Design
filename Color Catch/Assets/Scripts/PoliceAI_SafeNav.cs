@@ -1,102 +1,59 @@
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class PoliceAI_SafeNav : MonoBehaviour
+public class PoliceAI : MonoBehaviour
 {
-    NavMeshAgent agent;
     public Transform player;
-    public float chaseSpeed = 15f;
-    public float minDistance = 5f; // Minimum distance to maintain
-    public float maxDistance = 20f; // Maximum distance before chasing
+    public float followSpeed = 14f;
+    public float rotationSpeed = 160f;
+    public float minDistance = 3f;
 
-    private Vector3 lastPlayerPosition;
-    private bool isChasing = false;
+    private Rigidbody rb;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = chaseSpeed;
-        agent.angularSpeed = 120f;
-        agent.acceleration = 12f;
-        agent.stoppingDistance = minDistance;
+        rb = GetComponent<Rigidbody>();
 
-        // Find player automatically
+        // Find player automatically if not assigned
         if (player == null)
         {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-            if (playerObj != null)
-            {
-                player = playerObj.transform;
-                Debug.Log("Found player: " + player.name);
-            }
-            else
-            {
-                Debug.LogError("Cannot find player with tag 'Player'");
-            }
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null) player = playerObj.transform;
         }
-
-        // Ensure NavMesh setup
-        if (!agent.isOnNavMesh)
-        {
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(transform.position, out hit, 5.0f, NavMesh.AllAreas))
-            {
-                transform.position = hit.position;
-                agent.enabled = true;
-            }
-        }
-
-        lastPlayerPosition = player.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (player == null) return;
-        if (GameManager.Instance != null && GameManager.Instance.gameOver)
+        if (GameManager.Instance != null && GameManager.Instance.gameOver) return;
+
+        // Calculate direction to player
+        Vector3 directionToPlayer = player.position - transform.position;
+        float distanceToPlayer = directionToPlayer.magnitude;
+
+        // Only move if not too close to player
+        if (distanceToPlayer > minDistance)
         {
-            agent.isStopped = true;
-            return;
-        }
+            // Move towards player with same speed
+            Vector3 moveDirection = directionToPlayer.normalized;
+            rb.MovePosition(rb.position + moveDirection * followSpeed * Time.fixedDeltaTime);
 
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Always chase player but maintain distance
-        if (distanceToPlayer > minDistance && agent.isOnNavMesh)
-        {
-            agent.isStopped = false;
-
-            // Predict player's position for better chasing
-            Vector3 playerDirection = (player.position - lastPlayerPosition).normalized;
-            Vector3 predictedPosition = player.position + playerDirection * 2f;
-
-            agent.SetDestination(predictedPosition);
-            isChasing = true;
-        }
-        else
-        {
-            // Stop when close to player
-            agent.isStopped = true;
-            isChasing = false;
-
-            // Face the player
-            Vector3 directionToPlayer = (player.position - transform.position).normalized;
-            directionToPlayer.y = 0;
-            if (directionToPlayer != Vector3.zero)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-            }
-        }
-
-        lastPlayerPosition = player.position;
-
-        // Debug info
-        if (isChasing)
-        {
-            Debug.Log($"Police chasing player. Distance: {distanceToPlayer}");
+            // Rotate to face player with same rotation speed
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            Quaternion newRotation = Quaternion.RotateTowards(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+            rb.MoveRotation(newRotation);
         }
     }
-
-    // Police collision handled in PlayerCarController for instant game over
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        // Check if collided with police
+        if (collision.gameObject.CompareTag("Police"))
+        {
+            // End game immediately
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.EndGame(false);
+            }
+        }
+    }
 }
