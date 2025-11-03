@@ -242,10 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &259424
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -413,10 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &2169864
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -596,10 +588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &34100871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1157,10 +1145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &64679200
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1638,10 +1622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &130128627
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2053,10 +2033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &156715354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2224,10 +2200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &172889880
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2395,10 +2367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &182789044
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2881,10 +2849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &270019021
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3279,10 +3243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &326208386
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3507,10 +3467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  points: -10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!1001 &366545801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3929,10 +3885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &375512078
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4559,10 +4511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  points: -10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!1001 &388077396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4682,10 +4630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &388077401
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4853,10 +4797,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &409761052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5109,10 +5049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &415786667
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5488,10 +5424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &454024403
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5587,7 +5519,7 @@ MonoBehaviour:
   score: 0
   totalTime: 60
   gameOver: 1
-  winScore: 100
+  winScore: 200
   targetItem: 0
   rotateTargetOverTime: 0
   rotateInterval: 10
@@ -5946,10 +5878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &590419211
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6356,10 +6284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &628093542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6527,10 +6451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &653498924
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7163,10 +7083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &728472218
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7678,10 +7594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &793100446
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8009,9 +7921,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1920685680}
-  chaseSpeed: 15
+  followSpeed: 30
+  rotationSpeed: 160
   minDistance: 5
-  maxDistance: 20
 --- !u!195 &837170618
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8561,10 +8473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &887015147
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9078,10 +8986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &945055797
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9621,10 +9525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691068641417ff2459ec7850f5592da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
+  player: {fileID: 1920685680}
+  offset: {x: 1, y: 14, z: -40}
   smoothSpeed: 5
-  rotationSpeed: 3
 --- !u!1001 &991881756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10176,10 +10079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1092928601
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10347,10 +10246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1095609127
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10558,10 +10453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1117307114
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11010,10 +10901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1163752962
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11288,10 +11175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1182656802
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11373,10 +11256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1198998840
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11795,10 +11674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1228882131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12006,10 +11881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1255214518
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12300,10 +12171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1284174137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12647,10 +12514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1292342064
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12941,10 +12804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1331808684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13260,10 +13119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1357168924
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13488,37 +13343,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f65d01a310db1b74582d89cdcb63fe4b, type: 3}
   m_PrefabInstance: {fileID: 1386597769}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1411051356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1411051357}
-  m_Layer: 0
-  m_Name: FinishLine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1411051357
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411051356}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.17504713, y: -0.66517913, z: 2.5139568}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1417253422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13638,10 +13462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1417253427
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13849,10 +13669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1425085891
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14336,10 +14152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1493248611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14622,10 +14434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1531001058
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15460,10 +15268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1655737105
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15683,10 +15487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  points: -10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!4 &1660367580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d53359c70324d14c989d7058b50ec6b, type: 3}
@@ -15811,10 +15611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1671014061
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17287,10 +17083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1916569706
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17491,8 +17283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6235f162b119442af88ea473b26e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 24
-  reverseSpeed: 14
+  forwardSpeed: 50
+  reverseSpeed: 16
   turnSpeed: 160
 --- !u!1001 &1923849196
 PrefabInstance:
@@ -17888,10 +17680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &1983052416
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18483,10 +18271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &2039231573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18742,10 +18526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &2049799584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19057,10 +18837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  points: -10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &2062989168
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19370,10 +19146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  points: -10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!1 &2100869204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f65d01a310db1b74582d89cdcb63fe4b, type: 3}
@@ -19571,10 +19343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &2107338107
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19742,10 +19510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aed1084a0503741ab2fc32d83fb53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  points: 10
-  pickupSFX: {fileID: 0}
-  pickupVFX: {fileID: 0}
 --- !u!54 &2116646468
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20059,4 +19823,3 @@ SceneRoots:
   - {fileID: 1679491327}
   - {fileID: 1057182869}
   - {fileID: 51422982}
-  - {fileID: 1411051357}

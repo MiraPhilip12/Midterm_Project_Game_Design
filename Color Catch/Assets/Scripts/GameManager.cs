@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
 
     [Header("Win Condition")]
-    public int winScore = 100;
+    public int winScore = 200;
 
     [Header("Collectible target")]
     public ItemType targetItem = ItemType.Coin;
