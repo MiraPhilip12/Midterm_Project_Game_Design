@@ -3,7 +3,7 @@ using UnityEngine;
 public class PoliceAI : MonoBehaviour
 {
     public Transform player;
-    public float followSpeed = 14f;
+    public float followSpeed = 30f;
     public float rotationSpeed = 160f;
     public float minDistance = 3f;
 
@@ -47,10 +47,10 @@ public class PoliceAI : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if collided with police
-        if (collision.gameObject.CompareTag("Police"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             // End game immediately
-            if (GameManager.Instance != null)
+            if (collision.gameObject.CompareTag("Player"))
             {
                 GameManager.Instance.EndGame(false);
             }
