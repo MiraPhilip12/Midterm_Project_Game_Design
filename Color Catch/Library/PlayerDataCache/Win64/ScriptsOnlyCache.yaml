@@ -8,8 +8,6 @@ ScriptsOnlyBuild:
     - PlayerCarController
     - PoliceAI
     - SpawnManager
-    Unity.AI.Navigation.Editor.dll:
-    - Unity.AI.Navigation.Editor.NavMeshAssetManager
     Unity.AI.Navigation.dll:
     - Unity.AI.Navigation.NavMeshSurface
     Unity.Rider.Editor.dll:
@@ -115,45 +113,45 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 16666}
+      Script: {instanceID: 16668}
     - Class: 114
-      Script: {instanceID: 16670}
+      Script: {instanceID: 16672}
     - Class: 114
-      Script: {instanceID: 17290}
+      Script: {instanceID: 17292}
     - Class: 114
-      Script: {instanceID: 17726}
+      Script: {instanceID: 17728}
     - Class: 114
-      Script: {instanceID: 17942}
+      Script: {instanceID: 17944}
     - Class: 114
-      Script: {instanceID: 18250}
+      Script: {instanceID: 18252}
     - Class: 114
-      Script: {instanceID: 19276}
+      Script: {instanceID: 19278}
     - Class: 114
-      Script: {instanceID: 19540}
+      Script: {instanceID: 19542}
     - Class: 114
-      Script: {instanceID: 19610}
+      Script: {instanceID: 19612}
     - Class: 114
-      Script: {instanceID: 20080}
+      Script: {instanceID: 20082}
     - Class: 114
-      Script: {instanceID: 20280}
+      Script: {instanceID: 20282}
     - Class: 114
-      Script: {instanceID: 20314}
+      Script: {instanceID: 20316}
     - Class: 114
-      Script: {instanceID: 20468}
+      Script: {instanceID: 20470}
     - Class: 114
-      Script: {instanceID: 20876}
+      Script: {instanceID: 20878}
     - Class: 114
-      Script: {instanceID: 21036}
+      Script: {instanceID: 21038}
     - Class: 114
-      Script: {instanceID: 21130}
+      Script: {instanceID: 21132}
     - Class: 114
-      Script: {instanceID: 21372}
+      Script: {instanceID: 21374}
     - Class: 114
-      Script: {instanceID: 22750}
+      Script: {instanceID: 22752}
     - Class: 114
-      Script: {instanceID: 23094}
+      Script: {instanceID: 23096}
     - Class: 114
-      Script: {instanceID: 25220}
+      Script: {instanceID: 25218}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1110,4 +1108,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Catch.unity
-  playerPath: C:/Year3S5/Gaming Development/Mid_Term_Submissions_Mehraeel/Color Catch.exe
+  playerPath: C:/Year3S5/Gaming Development/Midterm_Submission/Color Catch.exe
