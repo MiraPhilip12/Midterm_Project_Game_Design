@@ -10,7 +10,6 @@ public class CameraFollow : MonoBehaviour
     {
         if (player == null) return;
 
-        // Calculate desired position behind the player
         Vector3 desiredPosition = player.position + player.TransformDirection(offset);
 
         // Smoothly move camera to desired position

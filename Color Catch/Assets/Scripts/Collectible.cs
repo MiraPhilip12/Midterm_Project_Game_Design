@@ -1,7 +1,5 @@
 using UnityEngine;
 
-// Collectible.cs
-// Attach to the coin or bomb prefab (ensure the collider is IsTrigger = true and Rigidbody is kinematic)
 public class Collectible : MonoBehaviour
 {
     public enum LocalItemType { Coin, Bomb }
@@ -25,11 +23,10 @@ public class Collectible : MonoBehaviour
             return;
         }
 
-        // Map local enum to GameManager.ItemType
         GameManager.ItemType gmType = (itemType == LocalItemType.Coin) ?
             GameManager.ItemType.Coin : GameManager.ItemType.Bomb;
 
-        // This will handle the scoring correctly based on targetItem
+        // handle the scoring correctly based on the target item collected
         GameManager.Instance.HandleCollectiblePicked(gmType, points);
 
         if (pickupVFX) Instantiate(pickupVFX, transform.position, Quaternion.identity);
