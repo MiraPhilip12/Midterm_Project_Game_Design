@@ -5737,7 +5737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6452039197999972492, guid: 32bf680131779d44b8005b0c8ba1d809, type: 3}
       propertyPath: m_TagString
-      value: Police
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7921,9 +7921,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1920685680}
-  followSpeed: 30
+  followSpeed: 40
   rotationSpeed: 160
-  minDistance: 5
+  minDistance: 8
 --- !u!195 &837170618
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7933,14 +7933,14 @@ NavMeshAgent:
   m_GameObject: {fileID: 837170613}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.1084704
-  m_Speed: 0
+  m_Radius: 0.00001
+  m_Speed: 9
   m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 4.540878
   m_BaseOffset: 0
@@ -7955,7 +7955,7 @@ Rigidbody:
   m_GameObject: {fileID: 837170613}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -7968,11 +7968,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 80
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!65 &837170620
 BoxCollider:
   m_ObjectHideFlags: 0
