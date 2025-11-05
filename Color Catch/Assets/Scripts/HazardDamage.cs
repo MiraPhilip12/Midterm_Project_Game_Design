@@ -32,10 +32,9 @@ public class HazardDamage : MonoBehaviour
             return;
         }
 
-        // Call the new GameManager API
         GameManager.Instance.OnHazardHit(penaltyPoints, gameObject.name);
 
-        // Optional: small knockback effect
+        // small knockback effect
         Rigidbody rb = col.attachedRigidbody;
         if (rb != null)
         {

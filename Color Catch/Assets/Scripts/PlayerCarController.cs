@@ -14,10 +14,9 @@ public class PlayerCarController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        // Set up rigidbody for proper physics
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
-        rb.mass = 1000f; // Realistic car mass
+        rb.mass = 1000f;
     }
 
     void Update()
@@ -30,7 +29,6 @@ public class PlayerCarController : MonoBehaviour
     {
         if (GameManager.Instance != null && GameManager.Instance.gameOver) return;
 
-        // Only move if we have input
         if (moveInput != 0)
         {
             Vector3 forward = transform.forward;
@@ -39,7 +37,6 @@ public class PlayerCarController : MonoBehaviour
             rb.MovePosition(rb.position + movement);
         }
 
-        // Only turn if we have input
         if (turnInput != 0)
         {
             float turn = turnInput * turnSpeed * Time.fixedDeltaTime;
